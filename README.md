@@ -26,3 +26,5 @@ We used metadata fiels to add the the info to the photos using lightroom classic
 - WhiteBalance = White balance card
 - Source = Comments
 
+This script was built for MBON Pole to Pole Source [CoralNet Source](https://coralnet.ucsd.edu/source/1895/)
+
