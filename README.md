@@ -8,9 +8,9 @@ In your source you can add 5 auxiliary metadata fields. In this example those ar
 We used metadata fiels to add the the info to the photos using lightroom classic.
 
 -Lightroom -> CORALNET
-SourceFile = Name 
-CreateDate = Date
-CreatorRegion = habitat
+*SourceFile = Name 
+*CreateDate = Date
+*CreatorRegion = habitat
 CreatorCountry= country
 CreatorCity = locality
 CreatorAddress = site
