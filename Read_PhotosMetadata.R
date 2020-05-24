@@ -19,4 +19,4 @@ names(dat2)<-c("Name","Date","habitat","country","locality","site","strata","Hei
 
 
 #Created a csv to be imported to CoralNet
-write.csv(dat2, 'intertidalargentina.csv',row.names = F)
+write.csv(dat2, 'name.csv',row.names = F)
