@@ -13,9 +13,12 @@ dat2<- dplyr::select (dat,Name=SourceFile,Date=CreateDate,habitat= CreatorRegion
 dat2$Date <- as.Date(dat2$Date,"%Y:%m:%d %H:%M:%S")
 dat2$Date <- format(as.Date(dat2$Date),'%m/%d/%Y')
 
+
 #Modify columns names in order to be identical to CoralNet
 names(dat2)<-c("Name","Date","habitat","country","locality","site","strata","Height (cm)","Latitude","Longitude","Camera","Photographer","Water quality","Strobes","Framing gear used","White balance card","Comments")
 
+#Height (cm) column only numbers allowed
+#dat2$`Height (cm)` <- 60
 
 #Created a csv to be imported to CoralNet
 write.csv(dat2, 'metadata.csv',row.names = F)
