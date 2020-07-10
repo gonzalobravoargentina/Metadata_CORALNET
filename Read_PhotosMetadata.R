@@ -18,7 +18,10 @@ dat2$Date <- format(as.Date(dat2$Date),'%m/%d/%Y')
 names(dat2)<-c("Name","Date","habitat","country","locality","site","strata","Height (cm)","Latitude","Longitude","Camera","Photographer","Water quality","Strobes","Framing gear used","White balance card","Comments")
 
 #Height (cm) column only numbers allowed
-#dat2$`Height (cm)` <- 60
+dat2$`Height (cm)` <- 60
+
+#to add info to soe column 
+#dat2$Strobes <- "alleviate"
 
 #Created a csv to be imported to CoralNet
 write.csv(dat2, 'metadata.csv',row.names = F)
