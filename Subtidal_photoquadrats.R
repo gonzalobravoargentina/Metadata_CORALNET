@@ -9,7 +9,17 @@ dat <- as.data.frame(dat)# create a dataframe
 library(dplyr)
 #names used as Pardelas Benthic Survey in CoralNet
 #https://coralnet.ucsd.edu/source/1933/
-dat2<- dplyr::select (dat,Name=SourceFile,Date=CreateDate,region=CreatorCountry,site=CreatorRegion,reef_name=`Sub-location`,reef_area=ImageDescription,understory=CreatorAddress,Height_cm=CreatorPostalCode,Latitude=GPSLatitude,Longitude=GPSLongitude,Depth=Title,Camera=Model, Photographer=Creator)
+dat2<- dplyr::select (dat,Name=SourceFile,Date=CreateDate,
+                      region=CreatorCountry,
+                      site=CreatorRegion,
+                      reef_name=`Sub-location`,
+                      reef_area=ImageDescription,
+                      understory=CreatorAddress,
+                      Height_cm=CreatorPostalCode,
+                      Latitude=GPSLatitude,Longitude=GPSLongitude,
+                      Depth=Title,
+                      Camera=Model, 
+                      Photographer=Creator)
 
 #set date format
 dat2$Date <- as.Date(dat2$Date,"%Y:%m:%d %H:%M:%S")
@@ -20,7 +30,7 @@ dat2$Water_quality <- "good"
 dat2$Strobes <- "two"
 dat2$Framing_gear_used <- "25x25cm"
 dat2$White_balance_card <- "yes"
-dat2$Comments <- "Capitulo 2"
+dat2$Comments <- "Costa Patagonica"
 #dat2$understory <- "no"
 
 
@@ -32,3 +42,6 @@ dat2$`Height (cm)` <- 45
 
 #Created a csv to be imported to CoralNet
 write.csv(dat2, 'metadata.csv',row.names = F)
+
+
+

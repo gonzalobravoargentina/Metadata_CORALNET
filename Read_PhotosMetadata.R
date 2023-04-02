@@ -22,8 +22,9 @@ names(dat2)<-c("Name","Date","habitat","country","locality","site","strata","Hei
 #Height (cm) column only numbers allowed
 dat2$`Height (cm)` <- 60
 
-#to add info to some column 
-#dat2$Strobes <- "alleviate"
+#to add info to some column
+dat2$Comments <- "trainingset"
+dat2$Strobes <- "no"
 
 #Created a csv to be imported to CoralNet
 write.csv(dat2, 'metadata.csv',row.names = F)
