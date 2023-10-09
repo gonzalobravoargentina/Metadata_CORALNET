@@ -1,5 +1,5 @@
 # Set working directory to the folder with the photos (in r Studio= session/Set Working directory /Choose directory)
-files <- list.files(pattern = "*.jpg")#get a list of files .jpg in wd
+files <- list.files(pattern = ".jpg|.JPG|.png")#get a list of files .jpg in wd
 
 library(exifr)
 dat <- read_exif(files) #read metadata 
@@ -30,7 +30,8 @@ dat2$Water_quality <- "good"
 dat2$Strobes <- "two"
 dat2$Framing_gear_used <- "25x25cm"
 dat2$White_balance_card <- "yes"
-dat2$Comments <- "Costa Patagonica"
+dat2$Comments <- "Capitulo 3"
+dat2$Photographer <- "Gonzalo Bravo"
 #dat2$understory <- "no"
 
 
@@ -39,6 +40,15 @@ names(dat2)<-c("Name","Date","region","site","reef name","reef area","understory
 
 #Height (cm) column only numbers allowed
 dat2$`Height (cm)` <- 45
+
+#in case we need to reeplace some text in the columns replace
+library(dplyr)
+dat2 <- dat2 %>%
+  mutate(site = ifelse(site == "Pardelas", "Bahia Piramides", site))
+
+dat2 <- dat2 %>%
+  mutate(region = ifelse(region == "GolfoNuevo", "Golfo Nuevo", region))
+
 
 #Created a csv to be imported to CoralNet
 write.csv(dat2, 'metadata.csv',row.names = F)
