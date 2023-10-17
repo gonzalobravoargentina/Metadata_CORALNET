@@ -1,16 +1,17 @@
 # Metadata_CORALNET
-R script to read metadata from photoquadrats and and create a .csv to be imported into CORALNET.
 
-## CORALNET METADATA FILE
-Depending on your source you will have a list of Recognized column names. CORALNET provide several standard metadata fields 
-for your images such as Date, Camera, Photographer, Water quality, Strobes, Framing gear used, White balance card and Comments.  
-In your source you can add 5 auxiliary metadata fields. In this example those are: habitat, country, locality, site and strata. 
-We complete the metadata of the photos using lightroom classic.
+## Description
+This R script is designed to read metadata from photoquadrats and generate a .csv file that can be easily imported into CORALNET.
 
-### Lightroom -> CORALNET 
-We selected metadata fields to add information into the photoquadrats depending if they are from intertidal or subtidal.
+## CORALNET Metadata File
+When working with CORALNET, you will have a list of recognized column names. CORALNET provides several standard metadata fields for your images, including Date, Camera, Photographer, Water quality, Strobes, Framing gear used, White balance card, and Comments. In addition to these standard fields, you can include five auxiliary metadata fields. In this example, we've used habitat, country, locality, site, and strata as auxiliary fields. We complete the metadata of the photos using Lightroom Classic.
 
-## INTERTIDAL PHOTOS
+## Lightroom to CORALNET
+We have selected specific metadata fields to add information to the photoquadrats in Lightroom. The information varies depending on whether the images are from the intertidal or subtidal zones.
+
+### Example of Metadata Fields:
+
+# Intertidal:
 - SourceFile = Name 
 - DateCreated = Date
 - Title = strata
@@ -22,7 +23,7 @@ We selected metadata fields to add information into the photoquadrats depending 
 - Model = Camera
 - Creator = Photographer
 
-## SUBTIDAL PHOTOS
+# Subtidal
 - SourceFile = Name 
 - DateCreated = Date
 - CreatorCountry = Region
