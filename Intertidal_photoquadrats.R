@@ -7,9 +7,9 @@ dat <- as.data.frame(dat)# create a dataframe
 
 #create a short data.frame with the columms of interest 
 library(dplyr)
-#names used as MBON_AMP.AR source in CoralNet
 
-#https://coralnet.ucsd.edu/source/1933/
+#names used as MBON_AMP.AR source in CoralNet
+#https://coralnet.ucsd.edu/source/2897/
 dat2<- dplyr::select (dat,Name=SourceFile,Date=DateCreated,
                       country=Country,
                       strata=Title,
