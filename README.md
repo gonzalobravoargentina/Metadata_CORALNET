@@ -1,13 +1,16 @@
 # Metadata_CORALNET
-R script to read metadata from .jpg photos and and create a .csv to be imported into CORALNET.
+R script to read metadata from photoquadrats and and create a .csv to be imported into CORALNET.
 
 ## CORALNET METADATA FILE
 Depeending on your source you will have a list of Recognized column names. CORALNET provide several standard metadata fields 
 for your images such as Date, Camera, Photographer, Water quality, Strobes, Framing gear used, White balance card and Comments.  
 In your source you can add 5 auxiliary metadata fields. In this example those are: habitat, country, locality, site and strata. 
-We used metadata fiels to add the the info to the photos using lightroom classic.
+We complete the metadata of the photos using lightroom classic.
 
-### Lightroom -> CORALNET
+### Lightroom -> CORALNET 
+We selected metadata fields to add information into the photoquadrats depending if they are from intertidal or subtidal.
+
+## INTERTIDAL PHOTOS
 - SourceFile = Name 
 - DateCreated = Date
 - Title = strata
@@ -19,5 +22,19 @@ We used metadata fiels to add the the info to the photos using lightroom classic
 - Model = Camera
 - Creator = Photographer
 
-This script was built for MBON Pole to Pole Source [CoralNet Source](https://coralnet.ucsd.edu/source/1895/)
+## SUBTIDAL PHOTOS
+- SourceFile = Name 
+- DateCreated = Date
+- CreatorCountry = Region
+- CreatorRegion= site
+- Sub-location = reef_name
+- ImageDescription = reef_area
+- CreatorAddress =understory
+- CreatorPostalCode = Height_cm
+- GPSLatitude = Latitude
+- GPSLongitude = Longitude
+- Title=Depth
+- Model = Camera
+- Creator = Photographer
+
 
