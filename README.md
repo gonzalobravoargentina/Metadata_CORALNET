@@ -2,7 +2,7 @@
 R script to read metadata from photoquadrats and and create a .csv to be imported into CORALNET.
 
 ## CORALNET METADATA FILE
-Depeending on your source you will have a list of Recognized column names. CORALNET provide several standard metadata fields 
+Depending on your source you will have a list of Recognized column names. CORALNET provide several standard metadata fields 
 for your images such as Date, Camera, Photographer, Water quality, Strobes, Framing gear used, White balance card and Comments.  
 In your source you can add 5 auxiliary metadata fields. In this example those are: habitat, country, locality, site and strata. 
 We complete the metadata of the photos using lightroom classic.
