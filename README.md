@@ -15,9 +15,9 @@ We have selected specific metadata fields to add information to the photoquadrat
 - SourceFile = Name 
 - DateCreated = Date
 - Title = strata
-- Country= country
+- Sublocation = site
 - City = locality
-- Location = site
+- Country= country
 - GPSLatitude = Latitude
 - GPSLongitude = Longitude
 - Model = Camera
