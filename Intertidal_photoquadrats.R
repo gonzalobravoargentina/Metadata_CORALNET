@@ -12,6 +12,7 @@ library(dplyr)
 #https://coralnet.ucsd.edu/source/2897/
 dat2<- dplyr::select (dat,Name=SourceFile,Date=DateCreated,
                       country=Country,
+                      state=State,
                       strata=Title,
                       locality=City,
                       site=Location,
@@ -26,14 +27,14 @@ dat2$Date <- as.Date(dat2$Date,"%Y:%m:%d %H:%M:%S")
 #library(lubridate)
 # replace the month number with a new month number
 #dat2$Date  <- update(dat2$Date , month = 4)
-dat2$habitat <- "Rocky Shore"
+#dat2$habitat <- "Rocky Shore"
 dat2$Height_cm <- 42
-dat2$Comments <- "AMP3"
+dat2$Comments <- "AMP5"
 dat2$Strobes <- "no"
 dat2$Framinggearused <- "25x25cm"
 
 #Modify columns names in order to be identical to CoralNet
-names(dat2)<-c("Name","Date","country","strata","locality","site","Latitude","Longitude","Camera","Photographer","habitat","Height (cm)","Comments","Strobes","Framing gear used")   
+names(dat2)<-c("Name","Date","country","state","strata","locality","site","Latitude","Longitude","Camera","Photographer","Height (cm)","Comments","Strobes","Framing gear used")   
 
 #Created a csv to be imported to CoralNet
 write.csv(dat2, 'metadata.csv',row.names = F)

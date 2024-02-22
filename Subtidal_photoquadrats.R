@@ -30,9 +30,13 @@ dat2$Water_quality <- "good"
 dat2$Strobes <- "two"
 dat2$Framing_gear_used <- "25x25cm"
 dat2$White_balance_card <- "yes"
-dat2$Comments <- "Capitulo 3"
+dat2$Comments <- "Capitulo 4"
 dat2$Photographer <- "Gonzalo Bravo"
-#dat2$understory <- "no"
+dat2$understory <- "no"
+
+library(dplyr)
+dat2 <- dat2 %>% 
+  relocate("Name","Date","region","site","reef_name","reef_area","understory","Height_cm","Latitude","Longitude","Depth","Camera","Photographer","Water_quality","Strobes","Framing_gear_used","White_balance_card","Comments")
 
 
 #Modify columns names in order to be identical to CoralNet
@@ -42,12 +46,12 @@ names(dat2)<-c("Name","Date","region","site","reef name","reef area","understory
 dat2$`Height (cm)` <- 45
 
 #in case we need to reeplace some text in the columns replace
-library(dplyr)
-dat2 <- dat2 %>%
-  mutate(site = ifelse(site == "Pardelas", "Bahia Piramides", site))
+#library(dplyr)
+#dat2 <- dat2 %>%
+  #mutate(site = ifelse(site == "Tierra del Fuego", "Ushuaia", site))
 
-dat2 <- dat2 %>%
-  mutate(region = ifelse(region == "GolfoNuevo", "Golfo Nuevo", region))
+#dat2 <- dat2 %>%
+#  mutate(region = ifelse(region == "GolfoNuevo", "Golfo Nuevo", region))
 
 
 #Created a csv to be imported to CoralNet
