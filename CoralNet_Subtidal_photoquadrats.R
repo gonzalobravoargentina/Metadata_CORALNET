@@ -9,17 +9,17 @@ dat <- as.data.frame(dat)# create a dataframe
 library(dplyr)
 #names used as Pardelas Benthic Survey in CoralNet
 #https://coralnet.ucsd.edu/source/1933/
-dat2<- dplyr::select (dat,Name=SourceFile,Date=CreateDate,
-                      region=CreatorCountry,
-                      site=CreatorRegion,
+dat2<- dplyr::select (dat,Name=SourceFile,
+                      Date=CreateDate,
                       reef_name=`Sub-location`,
                       reef_area=ImageDescription,
-                      understory=CreatorAddress,
-                      Height_cm=CreatorPostalCode,
+                      #understory=CreatorAddress,
+                      #Height_cm=CreatorPostalCode,
                       Latitude=GPSLatitude,Longitude=GPSLongitude,
-                      Depth=Title,
+                      Depth=GPSAltitude,
                       Camera=Model, 
                       Photographer=Creator)
+
 
 #set date format
 dat2$Date <- as.Date(dat2$Date,"%Y:%m:%d %H:%M:%S")
@@ -30,9 +30,13 @@ dat2$Water_quality <- "good"
 dat2$Strobes <- "two"
 dat2$Framing_gear_used <- "25x25cm"
 dat2$White_balance_card <- "yes"
-dat2$Comments <- "Capitulo 4"
-dat2$Photographer <- "Gonzalo Bravo"
+dat2$Comments <- "IDLE"
+dat2$region <- "ISLA DE LO ESTADOS"
+dat2$site <- "NORTE"
 dat2$understory <- "no"
+dat2$Height_cm <- "45"
+#dat2$Photographer <- "Maria Bagur & Gonzalo Bravo"
+#dat2$understory <- "no"
 
 library(dplyr)
 dat2 <- dat2 %>% 

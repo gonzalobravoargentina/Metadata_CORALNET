@@ -29,7 +29,7 @@ dat2$Date <- as.Date(dat2$Date,"%Y:%m:%d %H:%M:%S")
 #dat2$Date  <- update(dat2$Date , month = 4)
 #dat2$habitat <- "Rocky Shore"
 dat2$Height_cm <- 42
-dat2$Comments <- "AMP5"
+dat2$Comments <- "AMP3"
 dat2$Strobes <- "no"
 dat2$Framinggearused <- "25x25cm"
 
